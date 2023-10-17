@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>2.1 Starting a Jupyter environment :: Fraud Detection Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/rhods-fd-workshop/rhods-fd-workshop/2-01-create-workbench.html">
+    <link rel="prev" href="1-04-enable-pipelines.html">
+    <link rel="next" href="2-02-jupyter-env.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/RHDLogo.svg" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-scholars.github.io/rhods-fd-workshop">Fraud Detection Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhods-fd-workshop" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">1. Projects</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="1-01-dashboard.html">1. The Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="1-02-project-setup.html">2. Data Science Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="1-03-data-connections.html">3. Storage Data Connections</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="1-03-01-data-connections-manual.html">1. Manual</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="1-03-02-data-connections-script.html">2. Scripted Local</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="1-04-enable-pipelines.html">4. Enable Pipelines</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">2. Workbenches</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="2-01-create-workbench.html">1. Create a Workbench</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="2-02-jupyter-env.html">2. Jupyter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="2-03-notebooks.html">3. Notebooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="2-04-fraud-detection.html">4. Fraud Detection</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">3. Model Serving</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="3-01-save-model.html">1. Saving the Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="3-02-deploy-model.html">2. Deploy the Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="3-03-model-api.html">3. Using the API</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">4. Data Science Pipelines</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="4-01-elyra-pipelines.html">1. Elyra Pipeline Editor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="4-02-code-sdk-pipelines.html">2. KFP Tekton SDK Pipelines</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Fraud Detection Workshop</a></li>
+    <li>2. Workbenches</li>
+    <li><a href="2-01-create-workbench.html">1. Create a Workbench</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/cfchase/rhods-fd-workshop/edit/master/documentation/modules/ROOT/pages/2-01-create-workbench.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">2.1 Starting a Jupyter environment</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This section assumes you created a <code>My Storage</code> data connection <a href="1-03-data-connections.html" class="xref page">as described in section 1.3</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_workbench"><a class="anchor" href="#_create_a_workbench"></a>Create a Workbench</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In section 1, we created a data science project.  From the project detail page</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click the <strong>Create workbench</strong> button.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbenches/ds-project-create-workbench.png" alt="Create workbench button">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fill out the name and description.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbenches/create-workbench-form-name-desc.png" alt="Workbench Name and Description" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p>Red Hat ships several notebook images that are built and supported.  The <strong>Notebook image</strong> section will allow you to choose one of these or any custom images an administrator has set up for you.  Today, we&#8217;ll be using the <strong>Tensorflow</strong> image which has the necessary libraries for this workshop.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Choose the latest <strong>Tensorflow</strong> image.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbenches/create-workbench-form-image.png" alt="Workbench image" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Choose a small deployment and no GPUs.  We won&#8217;t need them for this workshop</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbenches/create-workbench-form-size.png" alt="Workbench size" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Leave the environment variables and storage options as the defaults.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbenches/create-workbench-form-env-storage.png" alt="Workbench Env Storage" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Under <strong>Data connections</strong>, choose to <strong>Use existing data connection</strong> and choose <code>My Storage</code> from the dropdown.  This will allow us to access the object storage we configured previously.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbenches/create-workbench-form-data-connection.png" alt="Data Connection" width="600">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click the <strong>Create workbench</strong> button.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbenches/create-workbench-form-button.png" alt="Create workbench button">
+</div>
+</div>
+<div class="paragraph">
+<p>You will be returned to your project while the workbench starts.  You&#8217;ll see the status of the workbench change from <code>Starting</code> to <code>Running</code> next to the listed workbench.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbenches/ds-project-workbench-list.png" alt="Workbench list">
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<strong>Editing a Workbench Configuration</strong> if you have made a mistake you can simply stop the workbench and edit it to make changes.
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbenches/ds-project-workbench-list-stop.png" alt="Workbench List Stop">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/workbenches/ds-project-workbench-list-edit.png" alt="Workbench List Edit">
+</div>
+</div>
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="1-04-enable-pipelines.html">4. Enable Pipelines</a></span>
+  <span class="next"><a href="2-02-jupyter-env.html">2. Jupyter</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
