@@ -1,7 +1,23 @@
-* xref:01-setup.adoc[1. Setup]
-** xref:01-setup.adoc#prerequisite[Prerequisites]
-** xref:01-setup.adoc#minikube[Setup Minikube]
+* 1. Projects
+** xref:1-01-dashboard.adoc[1. The Dashboard]
+** xref:1-02-project-setup.adoc[2. Data Science Projects]
+** xref:1-03-data-connections.adoc[3. Storage Data Connections]
+*** xref:1-03-01-data-connections-manual.adoc[1. Manual]
+*** xref:1-03-02-data-connections-script.adoc[2. Scripted Local]
+** xref:1-04-enable-pipelines.adoc[4. Enable Pipelines]
 
-* xref:02-deploy.adoc[2. Deploy Service]
-** xref:02-deploy.adoc#package[Build Service]
-** xref:02-deploy.adoc#deploy[Deploy Dervice]
+* 2. Workbenches
+** xref:2-01-create-workbench.adoc[1. Create a Workbench]
+** xref:2-02-jupyter-env.adoc[2. Jupyter]
+** xref:2-03-notebooks.adoc[3. Notebooks]
+** xref:2-04-object-detection.adoc[4. Fraud Detection]
+
+* 3. Model Serving
+** xref:3-01-save-model.adoc[1. Saving the Model]
+** xref:3-02-deploy-model.adoc[2. Deploy the Model]
+** xref:3-03-model-api.adoc[3. Using the API]
+// ** xref:3-04-calling-from-application.adoc[4. Calling from an Application]
+
+* 4. Data Science Pipelines
+** xref:4-01-elyra-pipelines.adoc[1. Elyra Pipeline Editor]
+** xref:4-02-code-sdk-pipelines.adoc[2. KFP Tekton SDK Pipelines]

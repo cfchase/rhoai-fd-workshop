@@ -1,11 +1,11 @@
 {
-  "name": "rhs-openshift-admins-devops",
-  "description": "OpenShift Admins Devops Course Documentation Site",
-  "homepage": "https://redhat-scholars.github.io/openshift-admins-devops",
+  "name": "rhods-fd-workshop",
+  "description": "Red Hat OpenShift Data Science Fraud Detection",
+  "homepage": "https://redhat-scholars.github.io/rhods-fd-workshop",
   "author": {
-    "email": "kamesh.sampath@hotmail.com",
-    "name": "Kamesh Sampath",
-    "url": "https://twitter.com/@kamesh_sampath"
+    "email": "cchase@redhat.com",
+    "name": "Chris Chase",
+    "url": "https://github.com/redhat-scholars/rhods-fd-workshop"
   },
   "dependencies": {
     "@antora/cli": "^2.3.1",
@@ -28,7 +28,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/redhat-scholars/openshift-admins-devops.git"
+    "url": "git+https://github.com/redhat-scholars/rhods-fd-workshop.git"
   },
   "license": "Apache-2.0",
   "babel": {
