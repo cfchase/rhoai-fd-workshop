@@ -2,7 +2,7 @@
 
 include::_attributes.adoc[]
 
-This section provides a small introduction on how to use Jupyter Notebooks. If you're already at ease with Jupyter, you can xref:2-04-fraud-detection.adoc[head to the next section].
+This section provides a small introduction on how to use Jupyter Notebooks. If you're already at ease with Jupyter, you can xref:2-04-experiment-train.adoc[head to the next section].
 
 == What's a notebook?
 
