@@ -10,7 +10,7 @@
 ** xref:2-01-create-workbench.adoc[1. Create a Workbench]
 ** xref:2-02-jupyter-env.adoc[2. Jupyter]
 ** xref:2-03-notebooks.adoc[3. Notebooks]
-** xref:2-04-object-detection.adoc[4. Fraud Detection]
+** xref:2-04-experiment-train.adoc[4. Training a Model]
 
 * 3. Model Serving
 ** xref:3-01-save-model.adoc[1. Saving the Model]
@@ -19,5 +19,5 @@
 // ** xref:3-04-calling-from-application.adoc[4. Calling from an Application]
 
 * 4. Data Science Pipelines
-** xref:4-01-elyra-pipelines.adoc[1. Elyra Pipeline Editor]
-** xref:4-02-code-sdk-pipelines.adoc[2. KFP Tekton SDK Pipelines]
+** xref:4-01-gui-pipelines.adoc[1. Workbench Pipeline Editor]
+** xref:4-02-sdk-pipelines.adoc[2. KFP Tekton SDK]

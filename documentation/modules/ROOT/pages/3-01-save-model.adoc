@@ -18,6 +18,4 @@ image::model-serving/create-workbench-form-data-connection.png[Workbench Form Da
 
 image::model-serving/jupyter-notebook-2.png[Jupyter Notebook 2]
 
-At the end of the notebook, you will have uploaded the file `models/yolov5n/model.onnx` to object storage, ready for your model server to use.
-
-Once that's complete,  xref:3-02-deploy-model.adoc[head to the next chapter.]
+At the end of the notebook, you will have uploaded the file `models/fraud/model.onnx` to object storage, ready for your model server to use.

@@ -32,13 +32,13 @@ image::model-serving/ds-project-workbench-list-deploy.png[Deploy model button]
 
 In the form:
 
-* Fill out the *Model Name* with the value `yolo`.
+* Fill out the *Model Name* with the value `fraud`.
 
 * Select the server you created (`Model Server`).
 
 * Select the *Existing data connection* `My Storage`
 
-* Enter the path to your uploaded model, `models/yolov5n/model.onnx`
+* Enter the path to your uploaded model, `models/fraud/model.onnx`
 
 image::model-serving/deploy-model-form.png[Deploy Model Form]
 
