@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>4.1 Workbench Pipeline Editor :: Fraud Detection Workshop</title>
+    <link rel="canonical" href="https://redhat-scholars.github.io/rhods-fd-workshop/rhods-fd-workshop/4-01-gui-pipelines.html">
+    <link rel="prev" href="3-03-model-api.html">
+    <link rel="next" href="4-02-sdk-pipelines.html">
+    <meta name="generator" content="Antora 3.0.0">
+    <link rel="stylesheet" href="../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://developers.redhat.com" target="_blank"><img src="../_/img/RHDLogo.svg" height="40px" alt="Red Hat Developer Program"></a>
+      <a class="navbar-item" style="font-size: 24px; color: white" href="https://redhat-scholars.github.io/rhods-fd-workshop">Fraud Detection Workshop</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="https://developers.redhat.com/ebooks/" target="_blank">Books</a>
+        <a class="navbar-item" href="https://developers.redhat.com/cheatsheets/" target="_blank">Cheat Sheets</a>
+        <a class="navbar-item" href="https://developers.redhat.com/events/" target="_blank">Upcoming Events</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">More Tutorials</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/kubernetes-tutorial/" target="_blank">Kubernetes</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/istio-tutorial/" target="_blank">Istio</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/quarkus-tutorial/" target="_blank">Quarkus</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/knative-tutorial/" target="_blank">Knative</a>
+            <a class="navbar-item" href="https://redhat-developer-demos.github.io/tekton-tutorial/" target="_blank">Tekton</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="rhods-fd-workshop" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="index.html"></a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">1. Projects</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="1-01-dashboard.html">1. The Dashboard</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="1-02-project-setup.html">2. Data Science Projects</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="1-03-data-connections.html">3. Storage Data Connections</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="1-03-01-data-connections-manual.html">1. Manual</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="1-03-02-data-connections-script.html">2. Scripted Local</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="1-04-enable-pipelines.html">4. Enable Pipelines</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">2. Workbenches</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="2-01-create-workbench.html">1. Create a Workbench</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="2-02-jupyter-env.html">2. Jupyter</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="2-03-notebooks.html">3. Notebooks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="2-04-experiment-train.html">4. Training a Model</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">3. Model Serving</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="3-01-save-model.html">1. Saving the Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="3-02-deploy-model.html">2. Deploy the Model</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="3-03-model-api.html">3. Using the API</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">4. Data Science Pipelines</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="4-01-gui-pipelines.html">1. Workbench Pipeline Editor</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="4-02-sdk-pipelines.html">2. KFP Tekton SDK</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+    </div>
+  </aside>
+</div>
+<main class="article">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="index.html" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Fraud Detection Workshop</a></li>
+    <li>4. Data Science Pipelines</li>
+    <li><a href="4-01-gui-pipelines.html">1. Workbench Pipeline Editor</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/cfchase/rhods-fd-workshop/edit/master/documentation/modules/ROOT/pages/4-01-gui-pipelines.adoc">Edit this Page</a></div>
+  </div>
+  <div class="content">
+<article class="doc">
+<h1 class="page">4.1 Workbench Pipeline Editor</h1>
+<div class="sect1">
+<h2 id="_automating_with_pipelines"><a class="anchor" href="#_automating_with_pipelines"></a>Automating with Pipelines</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>As you saw in previous sections, you can use notebooks to train and save your models.  However, you can also automate these tasks using <strong>Red Hat Data Science Pipelines</strong>.  Pipelines offer a way to automate the execution of multiple notebooks, python code, and to schedule them to run.  This way, you can execute long training jobs, or retrain your models on a schedule without having to manually run them in a notebook.</p>
+</div>
+<div class="paragraph">
+<p>In this first section, we will create a very simple pipeline.  We want to train a model and then save it to S3 storage and we&#8217;ll use the exact same notebooks from the previous sections to do so.</p>
+</div>
+<div class="paragraph">
+<p>We will start with a GUI editor right from your workbench.  The completed pipeline will look like <code>6 Train Save.pipeline</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_a_new_pipeline"><a class="anchor" href="#_creating_a_new_pipeline"></a>Creating a New Pipeline</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Let&#8217;s create a new pipeline.  Start from you workbench.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-launcher.png" alt="Pipeline Buttons">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open the <strong>Launcher</strong> from the <strong>+</strong> button, if the launcher is not visible</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-launcher-button.png" alt="Launcher Button">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click the <strong>Pipeline Editor</strong> to create a new blank pipeline</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-editor-button.png" alt="Pipeline Editor Button">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setting_pipeline_properties"><a class="anchor" href="#_setting_pipeline_properties"></a>Setting Pipeline Properties</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Great.  You&#8217;ve created a blank pipeline!  Let&#8217;s set some properties for the pipeline and any nodes that are created.  We&#8217;re going to set the default runtime image which will be used to run your notebooks or python code unless otherwise set.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click the <strong>Open Panel</strong> button in the top right corner of the pipeline editor.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-panel-button.png" alt="Open Panel Button">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-panel-button-loc.png" alt="Open Panel">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select the <strong>Pipeline Properties</strong> tab</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-properties-tab.png" alt="Pipeline Properties Tab">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the open pipeline properties panel, scroll down to <strong>Generic Node Defaults</strong> and <strong>Runtime Image</strong>.  Set the value to <code>Tensorflow with Cuda and Python 3.9 (UBI 9)</code></p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-runtime-image.png" alt="Pipeline Runtime Image0">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_creating_nodes"><a class="anchor" href="#_creating_nodes"></a>Creating Nodes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>So now that the pipeline is set up.  Let&#8217;s add some steps, or <strong>nodes</strong> in our pipeline.  Our two nodes will use notebooks <code>1_experiment_train.ipynb</code> and <code>2_save_model.ipynb</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click in the left filebrowser, and drag the notebooks onto the pipeline canvas.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-drag-drop.png" alt="Drag and Drop Notebooks">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Connect the output port of <code>1_experiment_train.ipynb</code> to the input port of <code>2_save_model.ipynb</code> by drawing a line from one to another.  Click and drag from the right point on node 1 to the left point on node 2.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-connect-nodes.png" alt="Connect Nodes">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setting_node_properties"><a class="anchor" href="#_setting_node_properties"></a>Setting Node Properties</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now that our pipeline has been constructed, we need to set some properties to include and pass files between nodes.  First, let&#8217;s select node 1, <code>1_experiment_train.ipynb</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click the node, <code>1_experiment_train.ipynb</code> to select it.  It will be outlined in blue.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-node-1.png" alt="Select Node 1">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click on the <strong>Node Properties</strong> tab in the properties panel.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Now we can add the <strong>File Dependencies</strong> to include the data to train our model.  If we don&#8217;t set this, the file won&#8217;t be included in the node when it runs and the training job would fail.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Scroll down and click <strong>Add</strong>` under <strong>File Dependencies</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-node-1-file-dep.png" alt="Add File Dependency">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set the value to <code>data/card_transdata.csv</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-node-1-file-dep-form.png" alt="Set File Dependency Value">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_input_and_output_for_connections"><a class="anchor" href="#_input_and_output_for_connections"></a>Input and Output for Connections</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In node 1, we&#8217;ll be creating <code>models/fraud/model.onnx</code> and in node 2, we want to upload that file to S3.  We need to set the output of node 1 so that it will be available for node 2.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select node 1</p>
+</li>
+<li>
+<p>Select the <strong>Node Properties</strong> tab</p>
+</li>
+<li>
+<p>Scroll down and click <strong>Add</strong>` under <strong>Output Files</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-node-1-add-output.png" alt="wb pipeline node 1 add output">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set the value to <code>models/fraud/model.onnx</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-node-1-file-output-form.png" alt="Set File Dependency Value">
+</div>
+</div>
+<div class="paragraph">
+<p>Now let&#8217;s set the input of node 2.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select node 2</p>
+</li>
+<li>
+<p>Select the <strong>Node Properties</strong> tab</p>
+</li>
+<li>
+<p>Scroll down and click <strong>Add</strong>` under <strong>Output Files</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-node-1-add-output.png" alt="wb pipeline node 1 add output">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Set the value to <code>models/fraud/model.onnx</code>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-node-1-file-output-form.png" alt="Set File Dependency Value">
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_node_properties_for_data_connections"><a class="anchor" href="#_node_properties_for_data_connections"></a>Node Properties for Data Connections</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Node 2 will be uploading the model to S3.  We need to set the S3 bucket and keys for the file.  We&#8217;ll be using the secret created by the Data Connection <code>My Storage</code> in the project setup.  The secret is called <code>aws-connection-my-storage</code> as you can see by hovering over the connection info <strong>?</strong> in the <strong>Data Connections</strong> tab.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/dsp-dc-secret-name.png" alt="My Storage Secret Name">
+</div>
+</div>
+<div class="paragraph">
+<p>We can use this secret in our pipeline nodes without having to save the information in our pipeline code.  This is important if you would like to save these pipelines to source control without any secret keys.</p>
+</div>
+<div class="paragraph">
+<p>The secret <code>aws-connection-my-storage</code> has the following fields:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-none hljs">AWS_ACCESS_KEY_ID
+AWS_DEFAULT_REGION
+AWS_S3_BUCKET
+AWS_S3_ENDPOINT
+AWS_SECRET_ACCESS_KEY</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>First let&#8217;s examine the node properties for node 2.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Select node 2</p>
+</li>
+<li>
+<p>Select the <strong>Node Properties</strong> tab</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Here', you&#8217;ll see some under <strong>Additional Properties</strong> that <strong>Environment Variables</strong> that have been pre-filled out.  The editor inferred you&#8217;d need them from the notebook code.</p>
+</div>
+<div class="paragraph">
+<p>Since we don&#8217;t want to save the value in our pipelines, we&#8217;ll remove all of these environment variables.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <strong>Remove</strong> for each of the environment variables.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-node-remove-env-var.png" alt="Remove Env Var">
+</div>
+</div>
+<div class="paragraph">
+<p>Now that your node is pipeline is clean, let&#8217;s add the S3 bucket and keys using the Kubernetes secret.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <strong>Add</strong> under <strong>Kubernetes Secrets</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-add-kube-secret.png" alt="Add Kube Secret">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Edit the form to set the values for the S3 bucket and keys.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-pipeline-add-kube-secret.png" alt="Add Kube Secret">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fill out the form with the following information</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_running_the_pipeline"><a class="anchor" href="#_running_the_pipeline"></a>Running the Pipeline</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<nav class="pagination">
+  <span class="prev"><a href="3-03-model-api.html">3. Using the API</a></span>
+  <span class="next"><a href="4-02-sdk-pipelines.html">2. KFP Tekton SDK</a></span>
+</nav>
+</article>
+<aside class="toc sidebar" data-title="Contents" data-levels="2">
+  <div class="toc-menu"></div>
+</aside>
+  </div>
+</main>
+</div>
+<footer class="footer">
+  <a class="rhd-logo" href="https://developers.redhat.com" target="_blank"></div>
+</footer>
+<script src="../_/js/vendor/clipboard.js"></script>
+<script src="../_/js/site.js"></script>
+<script async src="../_/js/vendor/highlight.js"></script>
+  </body>
+</html>

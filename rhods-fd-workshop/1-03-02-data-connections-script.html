@@ -92,7 +92,7 @@
     <a class="nav-link" href="2-03-notebooks.html">3. Notebooks</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="2-04-fraud-detection.html">4. Fraud Detection</a>
+    <a class="nav-link" href="2-04-experiment-train.html">4. Training a Model</a>
   </li>
 </ul>
   </li>
@@ -116,10 +116,10 @@
     <span class="nav-text">4. Data Science Pipelines</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="4-01-elyra-pipelines.html">1. Elyra Pipeline Editor</a>
+    <a class="nav-link" href="4-01-gui-pipelines.html">1. Workbench Pipeline Editor</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="4-02-code-sdk-pipelines.html">2. KFP Tekton SDK Pipelines</a>
+    <a class="nav-link" href="4-02-sdk-pipelines.html">2. KFP Tekton SDK</a>
   </li>
 </ul>
   </li>
@@ -198,7 +198,7 @@ This script will install two data connections and two Minio buckets as s3 compat
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This section details how to start an OpenShift job to install the s3 compatible storage and associated data connection secrets.  If you are knowledgeable in OpenShift and can access the cluster from the command line, you can simply execute <code>oc apply -n &lt;your-project-name/&gt; -f <a href="https://github.com/cfchase/rhods-fd-setup/blob/main/generated/setup-s3-job.yaml" class="bare">https://github.com/cfchase/rhods-fd-setup/blob/main/generated/setup-s3-job.yaml</a></code>.
+This section details how to start an OpenShift job to install the s3 compatible storage and associated data connection secrets.  If you are knowledgeable in OpenShift and can access the cluster from the command line, you can simply execute <code>oc apply -n &lt;your-project-name/&gt; -f <a href="https://github.com/cfchase/rhods-fd-notebooks/raw/main/setup/setup-s3.yaml" class="bare">https://github.com/cfchase/rhods-fd-notebooks/raw/main/setup/setup-s3.yaml</a></code>.
 </td>
 </tr>
 </table>
@@ -240,7 +240,7 @@ This section details how to start an OpenShift job to install the s3 compatible 
 <img src="_images/projects/ocp-console-project-selected.png" alt="Project Selected">
 </div>
 </div>
-<div class="listingblock">
+<div class="listingblock lines_space console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">---
 apiVersion: v1
@@ -273,7 +273,7 @@ spec:
             - -ec
             - |-
               echo -n 'Setting up Minio instance and data connections'
-              oc apply -f https://raw.githubusercontent.com/cfchase/rhods-fd-setup/main/generated/setup-s3-no-sa.yaml
+              oc apply -f https://github.com/cfchase/rhods-fd-notebooks/raw/main/setup/setup-s3-no-sa.yaml
           command:
             - /bin/bash
           image: image-registry.openshift-image-registry.svc:5000/openshift/tools:latest

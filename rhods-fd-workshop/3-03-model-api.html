@@ -6,7 +6,7 @@
     <title>2.3 Testing the Model API :: Fraud Detection Workshop</title>
     <link rel="canonical" href="https://redhat-scholars.github.io/rhods-fd-workshop/rhods-fd-workshop/3-03-model-api.html">
     <link rel="prev" href="3-02-deploy-model.html">
-    <link rel="next" href="4-01-elyra-pipelines.html">
+    <link rel="next" href="4-01-gui-pipelines.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
   </head>
@@ -92,7 +92,7 @@
     <a class="nav-link" href="2-03-notebooks.html">3. Notebooks</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="2-04-fraud-detection.html">4. Fraud Detection</a>
+    <a class="nav-link" href="2-04-experiment-train.html">4. Training a Model</a>
   </li>
 </ul>
   </li>
@@ -116,10 +116,10 @@
     <span class="nav-text">4. Data Science Pipelines</span>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="4-01-elyra-pipelines.html">1. Elyra Pipeline Editor</a>
+    <a class="nav-link" href="4-01-gui-pipelines.html">1. Workbench Pipeline Editor</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="4-02-code-sdk-pipelines.html">2. KFP Tekton SDK Pipelines</a>
+    <a class="nav-link" href="4-02-sdk-pipelines.html">2. KFP Tekton SDK</a>
   </li>
 </ul>
   </li>
@@ -154,7 +154,7 @@
 <p>Now that we&#8217;ve deployed the model, we can look at the endpoints it created.</p>
 </div>
 <div class="paragraph">
-<p>When creating the model server, we did <strong>not</strong> create a route for external access to the API and we did not protect it with an auth token.  This created an internal endpoint with no authentication. You found this information about the service and the model by hovering over the <strong>Internal Service</strong> and <strong>?</strong> identifiers for endpoint and model name in the previous section.  In the instructions, we named this model <code>yolo</code></p>
+<p>When creating the model server, we did <strong>not</strong> create a route for external access to the API and we did not protect it with an auth token.  This created an internal endpoint with no authentication. You found this information about the service and the model by hovering over the <strong>Internal Service</strong> and <strong>?</strong> identifiers for endpoint and model name in the previous section.  In the instructions, we named this model <code>fraud</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -170,7 +170,12 @@
 <p>For this internal service, we can access it by communicating directly with the service the same way an application in your project would.  One of the easiest way to do test it out, is from a notebook in the same project.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s go back to the Jupyter environment and try out our new endpoint.</p>
+<p>Let&#8217;s go back to the Jupyter environment and try out our new endpoint.  We&#8217;ll be trying out REST API calls in <code>4_rest_requests.ipynb</code> and gRPC requests in <code>5_grpc_requests.ipynb</code>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/model-serving/wb-notebook-requests.png" alt="Request Notebooks">
+</div>
 </div>
 <div class="paragraph">
 <p>*</p>
@@ -179,7 +184,7 @@
 </div>
 <nav class="pagination">
   <span class="prev"><a href="3-02-deploy-model.html">2. Deploy the Model</a></span>
-  <span class="next"><a href="4-01-elyra-pipelines.html">1. Elyra Pipeline Editor</a></span>
+  <span class="next"><a href="4-01-gui-pipelines.html">1. Workbench Pipeline Editor</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
