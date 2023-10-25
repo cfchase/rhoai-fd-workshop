@@ -75,7 +75,7 @@ image::pipelines/wb-pipeline-node-1-file-dep.png[Add File Dependency]
 
 image::pipelines/wb-pipeline-node-1-file-dep-form.png[Set File Dependency Value]
 
-== Input and Output for Connections
+==  Node Outputs 
 
 In node 1, we'll be creating `models/fraud/model.onnx` and in node 2, we want to upload that file to S3.  We need to set the output of node 1 so that it will be available for node 2.
 

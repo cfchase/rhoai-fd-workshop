@@ -20,4 +20,4 @@
 
 * 4. Data Science Pipelines
 ** xref:4-01-gui-pipelines.adoc[1. Workbench Pipeline Editor]
-** xref:4-02-sdk-pipelines.adoc[2. KFP Tekton SDK]
+** xref:4-02-sdk-pipelines.adoc[2. Python Pipelines]
