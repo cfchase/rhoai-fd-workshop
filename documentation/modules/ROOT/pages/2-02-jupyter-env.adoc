@@ -20,21 +20,21 @@ It's pretty empty right now though... So the first thing we will do is to bring 
 
 image::workbenches/jupyter-git-icon.png[Git Icon]
 
-* Enter the git *https* URL, `https://github.com/cfchase/rhods-fd-notebooks.git`, then click *CLONE*:
+* Enter the git *https* URL, `https://github.com/cfchase/fraud-detection-notebooks.git`, then click *CLONE*:
 
 [.lines_space]
 [.console-input]
 [source,text]
 ----
-https://github.com/cfchase/rhods-fd-notebooks.git
+https://github.com/cfchase/fraud-detection-notebooks.git
 ----
 
 image::workbenches/jupyter-git-modal.png[Git Modal]
 
-* Double-click and navigate to the newly-created folder, `rhods-fd-notebooks`:
+* Double-click and navigate to the newly-created folder, `fraud-detection-notebooks`:
 
 image::workbenches/jupyter-file-browser.png[Jupyter File Browser]
 
 You should now see the notebooks we've cloned from git in the file browser.
 
-image::workbenches/jupyter-file-browser-2.png[Jupyter File Browser - rhods-fd-notebooks]
+image::workbenches/jupyter-file-browser-2.png[Jupyter File Browser - fraud-detection-notebooks]

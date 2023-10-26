@@ -6,7 +6,7 @@ include::_attributes.adoc[]
 
 While we've created a simple pipeline using the GUI pipeline editor, it's often desirable to create pipelines using code that can be version controlled and shared with others. The https://github.com/kubeflow/kfp-tekton[kfp-tekton] SDK provides a Python API for creating pipelines. The SDK is available as a Python package that can be installed using `pip install kfp-tekton`.  With this package, you can use Python code to create a pipeline and then compile it to Tekton YAML.  Then we can import that YAML into OpenShift AI.
 
-If you'd like to browse the code to generate, you can find it in the `pipeline` directory in you `rhods-fd-notebooks` project you are using in your notebook.  Feel free to peruse the code.
+If you'd like to browse the code to generate, you can find it in the `pipeline` directory in you `fraud-detection-notebooks` project you are using in your notebook.  Feel free to peruse the code.
 
 * `7_get_data_train_upload.py` is the main pipeline code.
 * `get_data.py`, `train_model.py`, and `upload.py` are the three components of the pipeline.
@@ -15,11 +15,11 @@ If you'd like to browse the code to generate, you can find it in the `pipeline` 
 We won't be delving into the SDK for this workshop, and have provided you with the yaml file, `7_get_data_train_upload.yaml` in the git repo with your notebooks.  You can download it from
 
 ++++
-<a href="https://github.com/cfchase/rhods-fd-notebooks/raw/main/7_get_data_train_upload.yaml" download>https://github.com/cfchase/rhods-fd-notebooks/raw/main/7_get_data_train_upload.yaml</a>
+<a href="https://github.com/cfchase/fraud-detection-notebooks/raw/main/7_get_data_train_upload.yaml" download>https://github.com/cfchase/fraud-detection-notebooks/raw/main/7_get_data_train_upload.yaml</a>
 ++++
 
 
-// link:https://github.com/cfchase/rhods-fd-notebooks/raw/main/7_get_data_train_upload.yaml[Download Pipeline YAML, window=_blank, download]
+// link:https://github.com/cfchase/fraud-detection-notebooks/raw/main/7_get_data_train_upload.yaml[Download Pipeline YAML, window=_blank, download]
 
 Or, you can download it directly from your workbench:
 
@@ -47,7 +47,11 @@ As you can tell, no runs have been triggered yet.
 
 * Fill out the *Name* on the form. You can leave other fields as default.
 
+image::pipelines/pipeline-create-run-form.png[Create Pipeline Run Form]
+
 * Click *Create* to create the run.
+
+image::pipelines/pipeline-run-create-button.png[Create Pipeline Run Button]
 
 This will kick off a new run immediately and send you to the run details page.
 

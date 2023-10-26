@@ -20,7 +20,7 @@ image::projects/ds-project-list-resource-hover.png[Project List Resource Name]
 
 == Navigate to the OpenShift Project
 
-NOTE: This section details how to start an OpenShift job to install the s3 compatible storage and associated data connection secrets.  If you are knowledgeable in OpenShift and can access the cluster from the command line, you can simply execute `oc apply -n <your-project-name/> -f https://github.com/cfchase/rhods-fd-notebooks/raw/main/setup/setup-s3.yaml`.
+NOTE: This section details how to start an OpenShift job to install the s3 compatible storage and associated data connection secrets.  If you are knowledgeable in OpenShift and can access the cluster from the command line, you can simply execute `oc apply -n <your-project-name/> -f https://github.com/cfchase/fraud-detection-notebooks/raw/main/setup/setup-s3.yaml`.
 
 Now that we have the resource name, we can navigate to the project in the OpenShift Console.  Click on the *OpenShift Console* link in the application switcher top right corner of the OpenShift Web Console.
 
@@ -71,7 +71,7 @@ spec:
             - -ec
             - |-
               echo -n 'Setting up Minio instance and data connections'
-              oc apply -f https://github.com/cfchase/rhods-fd-notebooks/raw/main/setup/setup-s3-no-sa.yaml
+              oc apply -f https://github.com/cfchase/fraud-detection-notebooks/raw/main/setup/setup-s3-no-sa.yaml
           command:
             - /bin/bash
           image: image-registry.openshift-image-registry.svc:5000/openshift/tools:latest
