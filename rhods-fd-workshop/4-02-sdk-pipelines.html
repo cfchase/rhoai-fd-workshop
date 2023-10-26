@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>4.2 KFP Tekton SDK Pipelines :: Fraud Detection Workshop</title>
+    <title>4.2 Pipelines in Python :: Fraud Detection Workshop</title>
     <link rel="canonical" href="https://redhat-scholars.github.io/rhods-fd-workshop/rhods-fd-workshop/4-02-sdk-pipelines.html">
     <link rel="prev" href="4-01-gui-pipelines.html">
     <meta name="generator" content="Antora 3.0.0">
@@ -118,7 +118,7 @@
     <a class="nav-link" href="4-01-gui-pipelines.html">1. Workbench Pipeline Editor</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="4-02-sdk-pipelines.html">2. KFP Tekton SDK</a>
+    <a class="nav-link" href="4-02-sdk-pipelines.html">2. Python Pipelines</a>
   </li>
 </ul>
   </li>
@@ -138,15 +138,119 @@
   <ul>
     <li><a href="index.html">Fraud Detection Workshop</a></li>
     <li>4. Data Science Pipelines</li>
-    <li><a href="4-02-sdk-pipelines.html">2. KFP Tekton SDK</a></li>
+    <li><a href="4-02-sdk-pipelines.html">2. Python Pipelines</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/cfchase/rhods-fd-workshop/edit/master/documentation/modules/ROOT/pages/4-02-sdk-pipelines.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/cfchase/rhoai-fd-workshop/edit/master/documentation/modules/ROOT/pages/4-02-sdk-pipelines.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">4.2 KFP Tekton SDK Pipelines</h1>
-
+<h1 class="page">4.2 Pipelines in Python</h1>
+<div class="sect1">
+<h2 id="_the_sdk"><a class="anchor" href="#_the_sdk"></a>The SDK</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While we&#8217;ve created a simple pipeline using the GUI pipeline editor, it&#8217;s often desirable to create pipelines using code that can be version controlled and shared with others. The <a href="https://github.com/kubeflow/kfp-tekton">kfp-tekton</a> SDK provides a Python API for creating pipelines. The SDK is available as a Python package that can be installed using <code>pip install kfp-tekton</code>.  With this package, you can use Python code to create a pipeline and then compile it to Tekton YAML.  Then we can import that YAML into OpenShift AI.</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;d like to browse the code to generate, you can find it in the <code>pipeline</code> directory in you <code>rhods-fd-notebooks</code> project you are using in your notebook.  Feel free to peruse the code.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>7_get_data_train_upload.py</code> is the main pipeline code.</p>
+</li>
+<li>
+<p><code>get_data.py</code>, <code>train_model.py</code>, and <code>upload.py</code> are the three components of the pipeline.</p>
+</li>
+<li>
+<p><code>build.sh</code> is a script that builds the pipeline and creates <code>7_get_data_train_upload.yaml</code>, which is what we&#8217;ll need to upload.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>We won&#8217;t be delving into the SDK for this workshop, and have provided you with the yaml file, <code>7_get_data_train_upload.yaml</code> in the git repo with your notebooks.  You can download it from</p>
+</div>
+<a href="https://github.com/cfchase/rhods-fd-notebooks/raw/main/7_get_data_train_upload.yaml" download>https://github.com/cfchase/rhods-fd-notebooks/raw/main/7_get_data_train_upload.yaml</a>
+<div class="paragraph">
+<p>Or, you can download it directly from your workbench:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/wb-download.png" alt="Download Pipeline YAML">
+</div>
+</div>
+<div class="paragraph">
+<p>Now you can upload <code>7_get_data_train_upload.yaml</code> to OpenShift AI.  Start from the OpenShift AI dashboard.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <strong>Import pipeline</strong> in the <strong>Pipelines</strong> section.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/dsp-pipeline-import.png" alt="dsp pipeline import">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fill out the <strong>Pipeline name</strong> and <strong>Pipeline description</strong></p>
+</li>
+<li>
+<p>Click <strong>Upload</strong> and select <code>7_get_data_train_upload.yaml</code> from your local files to upload the pipeline.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/dsp-pipline-import-upload.png" alt="dsp pipline import upload">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <strong>Import pipeline</strong> to import and save the pipeline.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/dsp-pipline-import-button.png" alt="dsp pipline import button">
+</div>
+</div>
+<div class="paragraph">
+<p>As you can tell, no runs have been triggered yet.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Click <strong>Create run</strong> either under the <strong>Actions</strong> menu or in the expand pipeline item.</p>
+</li>
+<li>
+<p>Fill out the <strong>Name</strong> on the form. You can leave other fields as default.</p>
+</li>
+<li>
+<p>Click <strong>Create</strong> to create the run.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This will kick off a new run immediately and send you to the run details page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/pipelines/pipeline-run-in-progress.png" alt="pipeline run in progress">
+</div>
+</div>
+<div class="paragraph">
+<p>There you have it.  A pipeline created in Python running in OpenShift AI.</p>
+</div>
+</div>
+</div>
 <nav class="pagination">
   <span class="prev"><a href="4-01-gui-pipelines.html">1. Workbench Pipeline Editor</a></span>
 </nav>
