@@ -198,7 +198,7 @@ This script will install two data connections and two Minio buckets as s3 compat
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-This section details how to start an OpenShift job to install the s3 compatible storage and associated data connection secrets.  If you are knowledgeable in OpenShift and can access the cluster from the command line, you can simply execute <code>oc apply -n &lt;your-project-name/&gt; -f <a href="https://github.com/cfchase/rhods-fd-notebooks/raw/main/setup/setup-s3.yaml" class="bare">https://github.com/cfchase/rhods-fd-notebooks/raw/main/setup/setup-s3.yaml</a></code>.
+This section details how to start an OpenShift job to install the s3 compatible storage and associated data connection secrets.  If you are knowledgeable in OpenShift and can access the cluster from the command line, you can simply execute <code>oc apply -n &lt;your-project-name/&gt; -f <a href="https://github.com/cfchase/fraud-detection-notebooks/raw/main/setup/setup-s3.yaml" class="bare">https://github.com/cfchase/fraud-detection-notebooks/raw/main/setup/setup-s3.yaml</a></code>.
 </td>
 </tr>
 </table>
@@ -273,7 +273,7 @@ spec:
             - -ec
             - |-
               echo -n 'Setting up Minio instance and data connections'
-              oc apply -f https://github.com/cfchase/rhods-fd-notebooks/raw/main/setup/setup-s3-no-sa.yaml
+              oc apply -f https://github.com/cfchase/fraud-detection-notebooks/raw/main/setup/setup-s3-no-sa.yaml
           command:
             - /bin/bash
           image: image-registry.openshift-image-registry.svc:5000/openshift/tools:latest
